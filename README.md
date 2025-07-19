@@ -99,7 +99,7 @@ A comprehensive Chrome extension for tracking time spent on websites and analyzi
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 productivity-tracker/
 ├── 📁 app/                    # Next.js App Router
 │   ├── 📁 api/
@@ -123,7 +123,7 @@ productivity-tracker/
 ├── 📁 lib/                  # Utility functions
 ├── package.json
 └── README.md
-\`\`\`
+```
 
 ## 🎮 Usage
 
@@ -162,16 +162,16 @@ npm run extension:reload   # Reload extension in Chrome
 ### Development Workflow
 
 1. **Web Development**
-   \`\`\`bash
+   ```bash
    npm run dev
    # Visit http://localhost:3000
-   \`\`\`
+   ```
 
 2. **Extension Development**
-   \`\`\`bash
+   ```bash
    # Make changes to files in public/
    # Reload extension in chrome://extensions/
-   \`\`\`
+   ```
 
 3. **Testing**
    - Test web app at `http://localhost:3000`
@@ -333,11 +333,11 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 \`\`\`
 
 **Styles not working:**
-\`\`\`bash
+``` bash
 # Restart development server
 npm run dev
 # Clear browser cache
-\`\`\`
+```
 
 **TypeScript errors:**
 \`\`\`bash
