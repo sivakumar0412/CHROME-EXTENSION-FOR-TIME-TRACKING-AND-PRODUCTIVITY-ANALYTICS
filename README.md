@@ -1,3 +1,17 @@
+*COMPANY*: CODTECH IT SOLUTIONS
+
+*NAME*: D SIVA KUMAR
+
+*INTERN ID*: CT06DH1140
+
+*DOMAIN*: Full Stack Web Development
+
+*DURATION*: 6 WEEEKS
+
+*MENTOR*:NEELA SANTOSH
+
+
+
 # 🚀 Productivity Tracker Chrome Extension
 
 A comprehensive Chrome extension for tracking time spent on websites and analyzing productivity patterns with beautiful animations and detailed analytics.
