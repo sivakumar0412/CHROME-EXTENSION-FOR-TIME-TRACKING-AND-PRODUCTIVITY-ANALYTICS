@@ -65,26 +65,26 @@ A comprehensive Chrome extension for tracking time spent on websites and analyzi
 ### Installation
 
 1. **Clone the repository**
-   \`\`\`bash
+   ```bash
    git clone https://github.com/yourusername/productivity-tracker.git
    cd productivity-tracker
-   \`\`\`
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. **Install shadcn/ui components**
-   \`\`\`bash
+   ```bash
    npx shadcn@latest init
    npx shadcn@latest add card button badge tabs progress chart
-   \`\`\`
+   ```
 
 4. **Start development server**
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
 5. **Load Chrome extension**
    - Open Chrome and go to `chrome://extensions/`
@@ -147,7 +147,7 @@ productivity-tracker/
 
 ### Available Scripts
 
-\`\`\`bash
+```bash
 # Development
 npm run dev          # Start Next.js development server
 npm run build        # Build for production
@@ -157,7 +157,7 @@ npm run lint         # Run ESLint
 # Extension Development
 npm run extension:build    # Build extension files
 npm run extension:reload   # Reload extension in Chrome
-\`\`\`
+```
 
 ### Development Workflow
 
@@ -188,7 +188,7 @@ npm run extension:reload   # Reload extension in Chrome
 - ESLint
 
 **Settings (`.vscode/settings.json`):**
-\`\`\`json
+```json
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -196,12 +196,12 @@ npm run extension:reload   # Reload extension in Chrome
     ["cva\$$([^)]*)\$$", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ]
 }
-\`\`\`
+```
 
 ## 📊 Data Structure
 
 ### Tracking Data Format
-\`\`\`typescript
+```typescript
 interface TrackingData {
   [date: string]: {
     [domain: string]: {
@@ -211,10 +211,10 @@ interface TrackingData {
     }
   }
 }
-\`\`\`
+```
 
 ### Example Data
-\`\`\`json
+```json
 {
   "2024-01-15": {
     "github.com": {
@@ -229,7 +229,7 @@ interface TrackingData {
     }
   }
 }
-\`\`\`
+```
 
 ## 🎨 Animations & UI
 
@@ -242,14 +242,14 @@ interface TrackingData {
 - **Micro-interactions**: Button presses, form inputs, and feedback
 
 ### Custom Animation Classes
-\`\`\`css
+```css
 .animate-slideInUp     /* Slide in from bottom */
 .animate-slideInLeft   /* Slide in from left */
 .animate-countUp       /* Count-up number animation */
 .animate-glow          /* Glowing effect */
 .animate-float         /* Floating motion */
 .hover-lift            /* Hover lift effect */
-\`\`\`
+```
 
 ## 🔒 Privacy Policy
 
@@ -274,9 +274,9 @@ interface TrackingData {
 ### Chrome Web Store
 
 1. **Build for production**
-   \`\`\`bash
+   ```bash
    npm run build
-   \`\`\`
+   ```
 
 2. **Create extension package**
    - Zip the `public` folder contents
