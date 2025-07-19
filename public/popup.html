@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeIn 0.5s ease-out 0.1s both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      animation: fadeIn 0.5s ease-out 0.2s both;
+    }
+
+    .stat {
+      text-align: center;
+      flex: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .stat:hover {
+      transform: scale(1.05);
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2563eb;
+      animation: countUp 0.8s ease-out 0.3s both;
+    }
+
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .website-list {
+      max-height: 200px;
+      overflow-y: auto;
+      animation: fadeIn 0.5s ease-out 0.4s both;
+    }
+
+    .website-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #e5e7eb;
+      opacity: 0;
+      animation: slideInLeft 0.4s ease-out forwards;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .website-item:hover {
+      background-color: #f9fafb;
+      transform: translateX(5px);
+    }
+
+    .website-item:nth-child(1) { animation-delay: 0.5s; }
+    .website-item:nth-child(2) { animation-delay: 0.6s; }
+    .website-item:nth-child(3) { animation-delay: 0.7s; }
+    .website-item:nth-child(4) { animation-delay: 0.8s; }
+    .website-item:nth-child(5) { animation-delay: 0.9s; }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .website-name {
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .website-time {
+      color: #6b7280;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .category-productive {
+      color: #059669;
+    }
+
+    .category-unproductive {
+      color: #dc2626;
+    }
+
+    .category-neutral {
+      color: #6b7280;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+      animation: fadeIn 0.5s ease-out 0.6s both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    /* Loading animation for stats */
+    .loading {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>Productivity Tracker</h2>
+  </div>
+  
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value" id="totalTime">0h</div>
+      <div class="stat-label">Total Time</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value category-productive" id="productiveTime">0h</div>
+      <div class="stat-label">Productive</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value category-unproductive" id="unproductiveTime">0h</div>
+      <div class="stat-label">Unproductive</div>
+    </div>
+  </div>
+  
+  <div class="website-list" id="websiteList">
+    <!-- Website list will be populated by JavaScript -->
+  </div>
+  
+  <button class="btn" id="openDashboard">Open Dashboard</button>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
